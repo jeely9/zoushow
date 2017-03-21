@@ -1,0 +1,486 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  background-color: #e4366b;
+  color: #fff;
+  z-index: 9999;
+  display: -webkit-box;
+}
+header .logo {
+  width: 60px;
+  font-weight: bold;
+  line-height: 44px;
+  font-size: 17px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000;
+}
+header .title {
+  -webkit-box-flex: 1;
+  width: 100%;
+  font-size: 17px;
+  line-height: 44px;
+  text-shadow: 1px 1px 1px #000;
+  text-align: center;
+}
+header .searchBox {
+  -webkit-box-flex: 1;
+  width: 100%;
+  height: 28px;
+  margin-top: 8px;
+  z-index: 9999;
+  border-radius: 13px;
+  background-color: #fff;
+}
+header .searchBox div {
+  line-height: 28px;
+  color: #666;
+  font-size: 14px;
+}
+header .searchBox div i {
+  color: #000;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+header .moreBtn {
+  width: 60px;
+  text-align: center;
+  margin-top: 6px;
+}
+header .moreBtn button {
+  margin-top: 5px;
+  border: 0;
+  padding: 4px 8px;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 4px;
+  background: -webkit-linear-gradient(top, #e685a2, #d61250);
+  border-radius: 4px;
+  box-shadow: 0px 0px 1px #fff;
+}
+section {
+  padding-top: 44px;
+  padding-bottom: 55px;
+}
+section #moreContent #cancelBtn {
+  border: 0;
+  padding: 8px 20px;
+  color: #fff;
+  background: -webkit-linear-gradient(top, #e685a2, #d61250);
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #000;
+  width: 84%;
+  margin-left: 8%;
+  margin-top: 50px;
+}
+section #userContent {
+  padding-top: 50px;
+}
+section #userContent .userInfo {
+  width: 88%;
+  margin-left: 6%;
+  display: -webkit-box;
+}
+section #userContent .userInfo .userImg {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+section #userContent .userInfo .userImg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+section #userContent .userInfo .userName {
+  -webkit-box-flex: 1;
+  margin-top: 20px;
+}
+section #userContent .userInfo .userName p:nth-child(1) {
+  font-size: 22px;
+  font-weight: bold;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+section #userContent .userInfo .userName p:nth-child(2) {
+  margin-top: 20px;
+}
+section #userContent .userInfo .userName p:nth-child(2) span {
+  border: 0;
+  padding: 4px 15px;
+  color: #fff;
+  background: -webkit-linear-gradient(top, #e685a2, #d61250);
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #000;
+  letter-spacing: 3px;
+}
+section #searchContent .searchBox {
+  position: fixed;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #52525a;
+  z-index: 9999;
+}
+section #searchContent .searchBox i {
+  position: absolute;
+  left: 7%;
+  margin-top: 11px;
+}
+section #searchContent .searchBox input {
+  width: 90%;
+  margin-left: 5%;
+  height: 28px;
+  text-indent: 30px;
+  margin-top: 6px;
+  border: 0;
+  border-radius: 13px;
+}
+section #loginContent {
+  background: #f7f7f7;
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  font-family: "微软雅黑";
+  out-line: none;
+}
+section #loginContent input:nth-child(1) {
+  height: 40px;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 5%;
+  border-color: #f7f7f7;
+  border-radius: 10px;
+  background: #fff;
+  font-family: "微软雅黑";
+}
+section #loginContent input:nth-child(2) {
+  height: 40px;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  border-color: #f7f7f7;
+  border-radius: 10px;
+  background: #fff;
+  font-family: "微软雅黑";
+}
+section #loginContent input:nth-child(4) {
+  height: 40px;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 40%;
+  border-color: #f7f7f7;
+  border-radius: 10px;
+  background: #fff;
+  font-family: "微软雅黑";
+}
+section #registerContent,
+section #loginContent {
+  background: #f7f7f7;
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  font-family: "微软雅黑";
+  out-line: none;
+}
+section #registerContent input,
+section #loginContent input {
+  height: 40px;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  border: 0;
+  border-color: #f7f7f7;
+  border-radius: 10px;
+  background: #fff;
+  font-family: "微软雅黑";
+}
+section #registerContent input:nth-child(1),
+section #loginContent input:nth-child(1) {
+  top: 5%;
+}
+section #registerContent input:nth-child(2),
+section #loginContent input:nth-child(2) {
+  top: 15%;
+}
+section #registerContent input:nth-child(3),
+section #loginContent input:nth-child(3) {
+  top: 25%;
+}
+section #registerContent input:nth-child(3)#loginBtn,
+section #loginContent input:nth-child(3)#loginBtn {
+  top: 30%;
+}
+section #registerContent input:nth-child(4),
+section #loginContent input:nth-child(4) {
+  top: 40%;
+  background: #e02761;
+  color: #fff;
+}
+section #registerContent input.error,
+section #loginContent input.error {
+  border: 2px #f00 solid;
+  border-radius: 10px;
+}
+section #registerContent input[type="button"],
+section #loginContent input[type="button"] {
+  border: 0;
+  padding: 5px 20px;
+  color: #fff;
+  background: -webkit-linear-gradient(top, #e685a2, #d61250);
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #000;
+}
+section #homeContent #homeBanner {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+section #homeContent ul.proList li {
+  display: -webkit-box;
+  position: relative;
+  padding: 5px 0;
+  width: 100%;
+  height: 100px;
+}
+section #homeContent ul.proList li .proImg {
+  width: 90px;
+  height: 90px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+section #homeContent ul.proList li .proImg img {
+  width: 100%;
+  height: 100%;
+}
+section #homeContent ul.proList li .proInfo {
+  -webkit-box-flex: 1;
+  margin-right: 20px;
+  margin-top: 5px;
+  position: relative;
+}
+section #homeContent ul.proList li .proInfo p:nth-child(1) {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 20px;
+  height: 40px;
+}
+section #homeContent ul.proList li .proInfo p:nth-child(2) {
+  height: 24px;
+  line-height: 24px;
+}
+section #homeContent ul.proList li .proInfo p:nth-child(2) span {
+  color: #f42a76;
+  font-size: 18px;
+  font-family: "黑体";
+  padding-right: 10px;
+}
+section #homeContent ul.proList li .proInfo p:nth-child(2) del {
+  color: #999;
+}
+section #homeContent ul.proList li .proInfo p:nth-child(3) {
+  height: 16px;
+  color: #777;
+  font-size: 12px;
+  line-height: 16px;
+}
+section #homeContent ul.proList li .proInfo button {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  border: 0;
+  padding: 2px 25px;
+  color: #fff;
+  background: -webkit-linear-gradient(top, #e685a2, #d61250);
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000;
+}
+section #homeContent ul.proList li:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  height: 1px;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #484850;
+  z-index: 9999;
+}
+footer ul {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+}
+footer ul li {
+  height: 100%;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-orient: vertical;
+  color: #fff;
+}
+footer ul li p {
+  font-size: 12px;
+}
+footer ul li.active {
+  color: #e4366b;
+}
+.ellipsis-2 {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+input[type="text"],
+input[type="password"] {
+  text-indent: 10px;
+}
+input:focus {
+  outline: none;
+}
+#toast {
+  position: fixed;
+  bottom: 60px;
+  left: 8%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #eee;
+  text-align: center;
+  border-radius: 10px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  opacity: 0;
+}
+#toast1 {
+  position: fixed;
+  bottom: 60px;
+  width: 84%;
+  left: 8%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #eee;
+  text-align: center;
+  border-radius: 10px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  display: none;
+}
+@keyframes fadeIn {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+  to {
+    width: 84%;
+    opacity: 1;
+  }
+}
+.fadeIn {
+  animation: fadeIn 0.5s linear both;
+}
+@keyframes fadeOut {
+  from {
+    width: 84%;
+    opacity: 1;
+  }
+  to {
+    width: 0%;
+    opacity: 0;
+  }
+}
+.fadeOut {
+  animation: fadeOut 0.5s linear both;
+}
+#loadBox {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  overflow: hidden;
+  display: none;
+}
+#loadBox .load {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  border-radius: 20px;
+}
+#loadBox .load p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -30px;
+  margin-top: -30px;
+  width: 60px;
+  height: 60px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+}
+#loadBox .load p span {
+  width: 5px;
+  height: 5px;
+  background-color: #f66;
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+@keyframes loading {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loading {
+  animation: loading 3s infinite linear both;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://datainfo.duapp.com/shopdata/datainfo.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>商城数据接口说明</title>
+<style>
+	table{ background:#333; border:0px; width:80%; margin:10px;}
+	table tr{ height:30px;}
+	table td{ background:#FFF; width:50%;}
+	table th{ background:#CCC;}
+	.red{ color:#F00;}
+</style>
+</head>
+
+<body>
+<!--用户注册：-->
+<table border="0" cellpadding="0" cellspacing="1">
+  <tbody><tr>
+    <th colspan="2">用户注册： http://datainfo.duapp.com/shopdata/userinfo.php</th>
+  </tr>
+  <tr>
+    <td>参数</td>
+    <td>返回值</td>
+  </tr>
+  <tr>
+    <td>status:register</td>
+    <td>用户名重名：0 </td>
+  </tr>
+  <tr>
+    <td>userID:用户名</td>
+    <td>注册成功：1 </td>
+  </tr>
+  <tr>
+    <td>password:密码</td>
+    <td>数据库报错：2 </td>
+  </tr>
+</tbody></table>
+
+<!--用户登录：-->
+<table border="0" cellpadding="0" cellspacing="1">
+  <tbody><tr>
+    <th colspan="2">用户登录： http://datainfo.duapp.com/shopdata/userinfo.php</th>
+  </tr>
+  <tr>
+    <td>参数</td>
+    <td>返回值</td>
+  </tr>
+  <tr>
+    <td>status:login</td>
+    <td>登陆成功：返回json对象{code:'',userID:'',password:'', userimg_url:'', sex:''}</td>
+  </tr>
+  <tr>
+    <td>userID用户名</td>
+    <td>用户名不存在：0</td>
+  </tr>
+  <tr>
+    <td>password:密码</td>
+    <td>用户名密码不符：2</td>
+  </tr>
+</tbody></table>
+
+<!--用户信息：-->
+<table border="0" cellpadding="0" cellspacing="1">
+  <tbody><tr>
+    <th colspan="2">用户信息获取： http://datainfo.duapp.com/shopdata/getuser.php</th>
+  </tr>
+  <tr>
+    <td>参数<span class="red">此接口为JSONP格式</span></td>
+    <td>返回值</td>
+  </tr>
+  <tr>
+    <td>userID:用户名</td>
+    <td>没有信息：0 </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>登陆成功：返回jsonp对象{userID:'', userimg_url:'', sex:''} </td>
+  </tr>
+
+</tbody></table>
+
+<!--获取商品分类：-->
+<table border="0" cellpadding="0" cellspacing="1">
+  <tbody><tr>
+    <th colspan="2">获取商品分类： http://datainfo.duapp.com/shopdata/getclass.php</th>
+  </tr>
+  <tr>
+    <td>参数</td>
+    <td>返回值</td>
+  </tr>
+  <tr>
+    <td rowspan="2">无</td>
+    <td>返回json数组对象[{classID:"分类ID",className:"分类名称",icon:"iconfont图标"}]</td>
+  </tr>
+  <tr>
+    <td>无数据返回：0</td>
+  </tr>
+</tbody></table>
+<!--获取商品或列表：-->
+<table border="0" cellpadding="0" cellspacing="1">
+  <tbody><tr>
+    <th colspan="2">获取商品或列表： http://datainfo.duapp.com/shopdata/getGoods.php</th>
+  </tr>
+  <tr>
+    <td>参数：<span class="red">此接口为JSONP格式</span></td>
+    <td>返回值</td>
+  </tr>
+  <tr>
+    <td>无:没有参数时默认返回热推商品列表</td>
+    <td>没有搜索结果返回：0 </td>
+  </tr>
+  <tr>
+    <td>classID:通过类ID搜索商品，获得列表（可选）</td>
+    <td rowspan="4"><p>返回结果数组JSON：[{goodsID:"商品ID",classID:"类别ID",goodsName:"商品名称",goodsListImg:"列表图",price:"价格",discount:"折扣浮点型数据如9.5，0为无折扣",imgsUrl:"实拍图数组，使用时需转JSON",className:"类名"}]</p>如通过商品ID获取数据，结果集中则增加goodsBenUrl:"商品详情图片"，buynumber:"购买人数"，detail:"商品详情"</td>
+  </tr>
+  <tr>
+    <td>goodsID:通过商品ID搜索商品（可选，优先级高）</td>
+  </tr>
+  <tr>
+    <td>pageCode:显示第几组数据索引（默认0）每组数据显示10条</td>
+  </tr>
+  <tr>
+    <td>linenumber:每组数据需要显示的条目（默认10，可选）</td>
+  </tr>
+</tbody></table>
+
+<!--搜索商品：-->
+<table border="0" cellpadding="0" cellspacing="1">
+  <tbody><tr>
+    <th colspan="2">搜索商品： http://datainfo.duapp.com/shopdata/selectGoodes.php</th>
+  </tr>
+  <tr>
+    <td>参数：<span class="red">此接口为JSONP格式</span></td>
+    <td>返回值</td>
+  </tr>
+  <tr>
+    <td>selectText:用户搜索的关键字<span class="red">（请使用encodeURI格式编码）</span></td>
+    <td>没有搜索结果返回：0 </td>
+  </tr>
+  <tr>
+    <td><span class="red">仅支持商品名搜索</span></td>
+    <td rowspan="4"><p>返回结果数组JSON：[{goodsID:"商品ID",classID:"类别ID",goodsName:"商品名称",goodsListImg:"列表图",price:"价格",discount:"折扣浮点型数据如9.5，0为无折扣",imgsUrl:"实拍图数组，使用时需转JSON",className:"类名"}]</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>pageCode:显示第几组数据索引（默认0）每组数据显示10条</td>
+  </tr>
+  <tr>
+    <td>linenumber:每组数据需要显示的条目（默认10，可选）</td>
+  </tr>
+</tbody></table>
+
+<!--更新购物车：-->
+<table border="0" cellpadding="0" cellspacing="1">
+  <tbody><tr>
+    <th colspan="2">购物车更新： http://datainfo.duapp.com/shopdata/updatecar.php</th>
+  </tr>
+  <tr>
+    <td>参数</td>
+    <td>返回值</td>
+  </tr>
+  <tr>
+    <td>userID:用户名（必须参数）</td>
+    <td>数据成功更新：1 </td>
+  </tr>
+  <tr>
+    <td>goodsID:要更新的商品ID（必须参数）</td>
+    <td>数据更新失败：0 </td>
+  </tr>
+  <tr>
+    <td>number:购买商品数量（0为删除该商品）</td>
+    <td>&nbsp;</td>
+  </tr>
+</tbody></table>
+
+<!--查看购物车：-->
+<table border="0" cellpadding="0" cellspacing="1">
+  <tbody><tr>
+    <th colspan="2">查看购物车： http://datainfo.duapp.com/shopdata/getCar.php</th>
+  </tr>
+  <tr>
+    <td>参数：<span class="red">此接口为JSONP格式</span></td>
+    <td>返回值</td>
+  </tr>
+  <tr>
+    <td>userID:用户名</td>
+    <td>没有搜索结果返回：0 </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td rowspan="4"><p>返回结果数组JSON：[{goodsID:"商品ID",classID:"类别ID",goodsName:"商品名称",goodsListImg:"列表图",price:"价格",discount:"折扣浮点型数据如9.5，0为无折扣",className:"类名",number:"购买数量"}]</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</tbody></table>
+
+<!--获取首页banner：-->
+<table border="0" cellpadding="0" cellspacing="1">
+  <tbody><tr>
+    <th colspan="2">获取首页banner： http://datainfo.duapp.com/shopdata/getBanner.php</th>
+  </tr>
+  <tr>
+    <td>参数：<span class="red">此接口为JSONP格式</span></td>
+    <td>返回值</td>
+  </tr>
+  <tr>
+    <td>无:</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td rowspan="4"><p>返回结果数组JSON：[{goodsID:"商品ID",classID:"类别ID",goodsName:"商品名称",goodsBenUrl:"商品banner数组，请取数组的第一张作为banner"}]</p></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</tbody></table>
+
+<!--用户上传头像：-->
+<!--
+<table  border="0" cellpadding="0" cellspacing="1">
+  <tr>
+    <th colspan="2">用户上传头像： http://datainfo.duapp.com/shopdata/setuserImg.php</th>
+  </tr>
+  <tr>
+    <td>参数<span class="red">form接口post类型，服务器端接收表单元素，form属性enctype="multipart/form-data"</span></td>
+    <td>返回值</td>
+  </tr>
+  <tr>
+    <td>userimg:文件域名称，上传头像图片<span class="red">(图片不能大于100kb,只支持gif,jpg,png格式)</span></td>
+    <td>成功上传头像：1</td>
+  </tr>
+  <tr>
+    <td>userID:input输入框，用户名</td>
+    <td>图片格式不对（或超量）：Invalid file!</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>用户不存在：user is nonentity!</td>
+  </tr>
+</table>
+-->
+
+
+</body></html>
